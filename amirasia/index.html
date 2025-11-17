@@ -3,725 +3,268 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>کارت ویزیت سبز</title>
+<title> آسیا تکنو </title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Samim:wght@400;700&family=Vazirmatn:wght@400;500;600;700&display=swap');
+/* ==================== تنظیمات فونت ==================== */
+/* برای تغییر فونت کل صفحه، مقدار --font-family-primary را تغییر دهید */
+/* برای تغییر اندازه فونت‌ها، مقادیر --font-size-... را تغییر دهید */
 :root {
-  --text-color: #303030;
-  --light-bg: #f9f9f9;
-  --border-radius: 12px;
-  --shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
-  --heading-font: 'Samim', 'Vazirmatn', sans-serif;
-  --body-font: 'Vazirmatn', 'Segoe UI', sans-serif;
-
-  --intro-bg: linear-gradient(135deg, #e8f5e9, #c8e6c9, #a5d6a7);
-  --intro-bg-hover: linear-gradient(135deg, #c8e6c9, #a5d6a7, #81c784);
-  --intro-color: #1b5e20;
-
-  --skills-bg: linear-gradient(135deg, #aed581, #7cb342, #558b2f);
-  --skills-bg-hover: linear-gradient(135deg, #9ccc65, #689f38, #33691e);
-  --skills-color: #f9fbe7;
-
-  --contact-bg: linear-gradient(135deg, #26a69a, #4db6ac);
-  --contact-bg-hover: linear-gradient(135deg, #009688, #26a69a);
-  --contact-color: #e0f2f1;
-
-  --address-bg: linear-gradient(135deg, #388e3c, #1b5e20);
-  --address-bg-hover: linear-gradient(135deg, #2e7d32, #0d47a1);
-  --address-color: #e8f5e9;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
+  /* خانواده فونت اصلی - برای تغییر فونت کل صفحه این مقدار را تغییر دهید */
+  --font-family-primary: 'Vazirmatn', 'Segoe UI', Tahoma, sans-serif;
+  /* اندازه‌های فونت - برای تنظیم اندازه متن‌های مختلف */
+  --font-size-xs: 22px;     /* برای متن‌های خیلی کوچک */
+  --font-size-sm: 22px;     /* برای متن‌های کوچک */
+  --font-size-base: 22px;   /* اندازه متن پیش‌فرض */
+  --font-size-lg: 24px;     /* برای متن‌های بزرگ */
+  --font-size-xl: 24px;     /* برای عنوان‌های کوچک */
+  --font-size-2xl: 28px;    /* برای عنوان اصلی */
+  /* وزن‌های فونت */
+  --font-weight-normal: 400;  /* وزن نرمال */
+  --font-weight-medium: 500;  /* وزن متوسط */
+  --font-weight-bold: 700;    /* وزن پررنگ */
+  /* سایر متغیرهای طرح */
+  --intro-bg:linear-gradient(135deg,#27f327,#7364e6);
+  --skills-bg:linear-gradient(135deg,#84da21,#689f38);
+  --contact-bg:linear-gradient(135deg,#80cbc4,#26a69a);
+  --address-bg:linear-gradient(135deg,#66bb6a,#388e3c);
+  --text-color:#303030;  }
+/* فونت Vazirmatn - فونت فارسی زیبا و خوانا */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+  font-weight: 400;  font-style: normal;   font-display: swap;  }
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+  font-weight: 700;  font-style: normal;   font-display: swap;   }
+/* ==================== استایل‌های پایه ==================== */
 body {
-  font-family: var(--body-font); font-weight: 400; letter-spacing: 0.01em; line-height: 1.75;
-  background: radial-gradient(circle at top, #f7fff5, #ebf5e9 45%, #e6f1e3);
-  color: var(--text-color); padding: 24px; display: flex; justify-content: center;
-  align-items: center; min-height: 100vh;
-}
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  background:radial-gradient(circle,#f1f8e9,#eff3ea);
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;margin:0;padding:20px;  }
 .business-card{
-  width:100%;
-  max-width:500px;
-  background:#fff;
-  border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
-  overflow:hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-.business-card:hover {
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
-}
+  background:#ec9898;   border-radius:24px;   box-shadow:0 20px 50px rgba(0,0,0,0.15);   
+  max-width:520px;width:100%;   overflow:hidden;position:relative;   }
+/* 🌿 پس زمینه درختی */
+.nature-background{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  background:
+    linear-gradient(rgba(142, 236, 150, 0.93),rgba(129, 218, 136, 0.93)),
+    url('https://cdn.pixabay.com/photo/2016/05/05/12/02/tree-1373344_1280.jpg');
+  background-position:center;background-size:cover;
+  border-radius:24px;opacity:.8;z-index:0;   }
+/* بخش لوگو */
 .logo-section{
-  display:flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  padding: 20px;
   background:linear-gradient(135deg,#5fe776,#4ace3e);
-  color:#fff;
-  justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 15px;
-  border-radius: 24px;
-  position: relative;
-  z-index: 10;
-}
-.logo-section .logo{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-}
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-  gap: 8px;
-}
+  display:flex;flex-direction:row-reverse;align-items:center;justify-content:space-between;
+  padding:18px;border-radius:24px;color:#fff;position:relative;z-index:2;   }
+/* ==================== گزینه‌های لوگو ==================== */
+/* اگر می‌خواهید لوگو مربع باشد، از این استایل استفاده کنید و استایل مستطیل را غیرفعال کنید */
+.logo{
+  width:110px;height:110px;border-radius:50%;object-fit:cover;
+  border:5px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.2);   }
+
+/* اگر می‌خواهید لوگو مستطیل باشد، از این استایل استفاده کنید و استایل مربع را غیرفعال کنید */
+/* .logo{
+  width:140px;height:100px;border-radius:15px;object-fit:cover;
+  border:4px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.2);  } */
+
+.logo-text{text-align:center;flex:1;}
 .logo-section h2{
-  font-family: var(--heading-font);
-  font-size: 18px;
-  margin: 0;
-  line-height: 1.4;
-  font-weight: 700;
-}
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  margin:0;    }
 .logo-section .subtitle{
-  font-family: var(--heading-font);
-  font-size: 16px;
-  margin: 0;
-  line-height: 1.4;
-  font-weight: 500;
-  opacity: 0.9;
-}
-
-/* زمینه فضای سبز */
-.nature-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    linear-gradient(rgba(233, 245, 233, 0.85), rgba(233, 245, 233, 0.85)),
-    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path fill="%234CAF50" d="M50,150 Q100,100 150,150 L150,200 L50,200 Z"/><circle cx="60" cy="80" r="15" fill="%2381C784"/><circle cx="100" cy="70" r="20" fill="%2366BB6A"/><circle cx="140" cy="85" r="12" fill="%2381C784"/></svg>');
-  background-size: cover;
-  z-index: 1;
-  border-radius: 24px;
-  opacity: 0.7;
-}
-
-/* درخت زیبا */
-.tree-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 180px;
-  bottom: 20px;
-  width: 80px;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tree-trunk {
-  width: 12px;
-  height: 100%;
-  background: linear-gradient(to bottom, #8D6E63, #5D4037);
-  border-radius: 6px;
-  position: relative;
-  z-index: 2;
-}
-
-.tree-leaves {
-  position: absolute;
-  top: -40px;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at center, #4CAF50, #2E7D32);
-  border-radius: 50%;
-  z-index: 1;
-  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
-}
-
-.tree-branch {
-  position: absolute;
-  background: linear-gradient(to right, #8D6E63, #5D4037);
-  border-radius: 4px;
-  z-index: 3;
-}
-
-.tree-branch:nth-child(1) {
-  width: 40px;
-  height: 6px;
-  top: 30px;
-  left: -35px;
-  transform: rotate(-15deg);
-}
-
-.tree-branch:nth-child(2) {
-  width: 35px;
-  height: 6px;
-  top: 50px;
-  right: -30px;
-  transform: rotate(15deg);
-}
-
-.tree-branch:nth-child(3) {
-  width: 30px;
-  height: 6px;
-  top: 70px;
-  left: -25px;
-  transform: rotate(-10deg);
-}
-
-.tree-branch:nth-child(4) {
-  width: 25px;
-  height: 6px;
-  top: 90px;
-  right: -20px;
-  transform: rotate(10deg);
-}
-
-.leaf {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: #4CAF50;
-  border-radius: 50% 0 50% 50%;
-  transform: rotate(45deg);
-  animation: leafFloat 3s ease-in-out infinite;
-}
-
-.leaf:nth-child(1) { top: 20px; left: -15px; animation-delay: 0s; }
-.leaf:nth-child(2) { top: 40px; right: -10px; animation-delay: 0.5s; }
-.leaf:nth-child(3) { top: 60px; left: -20px; animation-delay: 1s; }
-.leaf:nth-child(4) { top: 80px; right: -15px; animation-delay: 1.5s; }
-.leaf:nth-child(5) { top: 100px; left: -10px; animation-delay: 2s; }
-
-@keyframes leafFloat {
-  0%, 100% { transform: rotate(45deg) translateY(0); }
-  50% { transform: rotate(45deg) translateY(-5px); }
-}
-
-.accordion-item {
-  position: relative;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
-  z-index: 3;
-}
-
-.accordion-item:nth-child(1) { animation-delay: 0.1s; }
-.accordion-item:nth-child(2) { animation-delay: 0.2s; }
-.accordion-item:nth-child(3) { animation-delay: 0.3s; }
-.accordion-item:nth-child(4) { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+  font-size: var(--font-size-sm);
+  font-family: var(--font-family-primary);
+  margin-top:6px;   }
+/* برگ‌های اطراف لوگو */
+.logo-leaf{
+  position:absolute;width:26px;height:45px;background:radial-gradient(circle at 30% 30%,#66bb6a,#2e7d32);
+  border-radius:50% 50% 0 50%/50% 50% 50% 50%;transform:rotate(45deg);z-index:3;   }
+.logo-leaf:nth-child(1){top:10px;left:25px;transform:rotate(-35deg);}
+.logo-leaf:nth-child(2){bottom:50px;right:20px;transform:rotate(55deg);}    /* برگ راست پایین  */
+.logo-leaf:nth-child(3){top:15px;right:60px;transform:rotate(25deg);}      /* برگ راست بالا  */  
+/* ساختار منو */
+.accordion-item{margin:18px;border-radius:24px;overflow:hidden;position:relative;z-index:2;}
 .accordion-button{
-  width:100%; 
-  display:flex; 
-  justify-content:space-between; 
-  align-items:center; 
-  padding:18px 24px;
-  border:none; 
-  cursor:pointer; 
-  font-size:20px; 
-  font-weight:600; 
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-family:var(--heading-font);
-  border-radius: 24px;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  z-index: 5;
-}
-.accordion-button span{flex:1;text-align:center;}
-.accordion-button:hover {
-  transform: translateX(-3px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
-.accordion-button.active {
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-radius: 24px 24px 0 0;
-}
-.accordion-button svg{width:18px;height:18px;fill:currentColor;transition:transform .4s cubic-bezier(0.4, 0, 0.2, 1);}
+  width:100%;padding:18px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  border:none;cursor:pointer;border-radius:24px;text-align:center;color:#1b5e20;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);display:flex;justify-content:center;align-items:center;gap:8px;
+  transition:all .1s;   }
+.accordion-button svg{width:20px;height:20px;fill:#1b5e20;transition:transform .4s ease;}
 .accordion-button.active svg{transform:rotate(180deg);}
+.accordion-button:hover{transform:translateY(-2px);}
 .accordion-content{
-  max-height:0;
-  overflow:hidden;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity:0;
-  border-radius: 0 0 24px 24px;
-  position: relative;
-  z-index: 4;
-}
+  max-height:0;overflow:hidden;opacity:0;transition:all .4s;
+  padding:0;border-radius:24px;background:#eaf4e3;text-align:center;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);  }
 .accordion-content.active{
-  opacity:1;
-  overflow:visible;
-  border-radius: 0 0 24px 24px;
-  box-shadow: inset 0 4px 12px rgba(0, 0, 0, 0.08);
-  max-height:2000px;
+  max-height:800px;opacity:1;padding:20px 15px;
+  box-shadow:inset 0 3px 12px rgba(0,0,0,0.08);
 }
-#intro-btn{background:var(--intro-bg);color:var(--intro-color);}
-#intro-btn:hover{background:var(--intro-bg-hover);}
-
-#contact-btn{background:var(--contact-bg);color:var(--contact-color);}
-#contact-btn:hover{background:var(--contact-bg-hover);}
-#skills-btn{background:var(--skills-bg);color:var(--skills-color);}
-#skills-btn:hover{background:var(--skills-bg-hover);}
-#address-btn{background:var(--address-bg);color:var(--address-color);}
-#address-btn:hover{background:var(--address-bg-hover);}
-#intro-content{
-  background:var(--intro-bg);
-  color:var(--intro-color);
-  padding: 0;
-  font-size: 18px;
-  line-height: 1.8;
-  border-radius: 0 0 24px 24px;
-}
-#intro-content.active{padding:24px 28px; border-radius: 0 0 24px 24px;}
-#contact-content{
-  background:var(--contact-bg);
-  color:var(--contact-color);
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 12px;
-  border-radius: 0 0 24px 24px;
-}
-#contact-content.active{padding:16px 8px; border-radius: 0 0 24px 24px;}
-#skills-content{
-  background:var(--skills-bg);
-  color:var(--skills-color);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:16px;
-  padding: 0;
-  text-align: center;
-  border-radius: 0 0 24px 24px;
-}
-#skills-content.active{padding:20px 16px; border-radius: 0 0 24px 24px;}
-#address-content{
-  background:var(--address-bg);
-  color:var(--address-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  text-align: center;
-  border-radius: 0 0 24px 24px;
-}
-#address-content.active{padding:24px 16px; border-radius: 0 0 24px 24px;}
-.social-wrapper { 
-  display: flex; 
-  justify-content: center;
-  gap: 60px;
-  flex-wrap: nowrap;
-  margin-top: 10px; 
-} 
-.social-column { 
-  display: flex; 
-  flex-direction: column; 
-  gap: 8px; 
-}   
-.social-column.left { 
-  align-items: flex-end; 
-  text-align: right; 
-} 
-.social-column.right { 
-  align-items: flex-start; 
-  text-align: left; 
-}
-.contact-method a { 
-  display: inline-block; 
-  background: rgba(255,255,255,0.15); 
-  color: inherit; 
-  padding: 10px 18px;
-  border-radius: 12px; 
-  font-weight: 600; 
-  text-decoration: none; 
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-} 
-.contact-method a:hover { 
-  background: rgba(255,255,255,0.3); 
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-.contact-method a:active {transform: translateY(0px);}
-.map-link {
-  background: linear-gradient(135deg, #43a047, #2e7d32);
-  color: #fff;
-  border: none;
-  padding: 14px 24px;
-  margin: 8px 0;
-  border-radius: 18px;
-  font-family: 'Vazirmatn', 'Shabnam', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  text-align: center;
-  width: 85%;
-  max-width: 360px;
-  cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(67, 160, 71, 0.1);
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-.map-link:hover {
-  background: linear-gradient(135deg, #388e3c, #1b5e20);
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(67, 160, 71, 0.2);
-}
-.map-link:active {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-#locations-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  gap: 12px;
-}
-.contact-method {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-}
-#skills-content .contact-method{
-  width:100%; 
-  max-width:420px; 
-  margin:0 auto; 
-  padding:14px 20px; 
-  display:flex; 
-  justify-content:center;
-  align-items:center; 
-  gap:32px; 
-  direction:ltr; 
-  background:rgba(255,255,255,0.2); 
-  border-radius:18px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.12);
-}
-#skills-content .contact-method a{
-  flex:1; 
-  display:flex; 
-  align-items:center; 
-  justify-content: center;
-  font-size:1.3rem; 
-  font-weight:600; 
-  letter-spacing:0.01em; 
-  background:transparent;
-  color:currentColor; 
-  padding:0; 
-  margin:0; 
-  transition: all 0.2s ease; 
-  cursor: pointer;
-}
-#skills-content .contact-method a:hover {transform: scale(1.08);}
-
-#skills-content .contact-method a:first-child{
-  justify-content: center;
-  text-align:center;
-  direction:rtl;
-  font-family:'Samim','Vazirmatn',sans-serif;
-}
-#skills-content .contact-method a:last-child{
-  justify-content: center;
-  text-align:center;
-  direction:ltr;
-  font-family:'Vazirmatn','Segoe UI',sans-serif;
-  font-variant-numeric:tabular-nums;
-  letter-spacing:0.12em;
-  font-weight:700;
-}
-@media (max-width: 480px) {
-  .logo-section {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-  
-  .logo-section .logo {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .logo-text {
-    gap: 6px;
-  }
-  
-  .logo-section h2 {
-    font-size: 16px;
-  }
-  
-  .logo-section .subtitle {
-    font-size: 14px;
-  }
-  
-  #skills-content .contact-method{
-    flex-direction: column;
-    align-items: center;
-    gap:10px;
-    direction:rtl;
-  } 
-  
-  #skills-content .contact-method a{
-    width:100%;
-    justify-content: center;
-    text-align:center;
-    font-size:1.3rem;
-  }
-  
-  #skills-content .contact-method a:last-child{
-    direction:ltr;
-    text-align:center;
-    letter-spacing:0.15em;
-  }
-  
-  .social-column.left,
-  .social-column.right { gap: 6px;} 
-  
-  .contact-method a {padding: 8px 12px;font-size: 14px;} 
-  
-  .contact-method.f a {font-size: 1.1rem;} 
-  
-  .map-link {width: 90%;padding: 12px 20px;font-size: 16px;}
-  
-  /* تنظیمات درخت برای موبایل */
-  .tree-container {
-    width: 60px;
-    top: 160px;
-  }
-  
-  .tree-leaves {
-    width: 60px;
-    height: 60px;
-    top: -30px;
-  }
-  
-  .tree-branch:nth-child(1) {
-    width: 30px;
-    left: -25px;
-  }
-  
-  .tree-branch:nth-child(2) {
-    width: 25px;
-    right: -20px;
-  }
-} 
-.f{ 
-  font-size: 1.5rem; 
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
+/* رنگ‌های دکمه‌ها */
+#intro-btn{background:var(--intro-bg);}
+#skills-btn{background:var(--skills-bg);}
+#contact-btn{background:var(--contact-bg);}
+#address-btn{background:var(--address-bg);}
+#intro-content.active{background:#f1f8e9;}
+#skills-content.active{background:#e6ee9c;}
+#contact-content.active{background:#e0f2f1;}
+#address-content.active{background:#e8f5e9;}
+/* زیرمنو */
+.accordion-content ul{list-style:none;padding:0;margin:0;}
+.accordion-content li{
+  margin:6px 0;   background:rgba(255,255,255,0.6);   padding:8px 12px;
+  border-radius:12px;   font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);   }
+.contact-method a{
+  display:inline-block;background:rgba(255,255,255,0.4);
+  color:#004d40;padding:8px 15px;border-radius:12px;
+  text-decoration:none;margin:5px;transition:.3s;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-sm);   }
+.contact-method a:hover{background:rgba(255,255,255,0.65);}
+/* دکمه‌های آدرس */
+.map-link{
+  display:block;background:linear-gradient(135deg,#43a047,#2e7d32);
+  color:#fff;border:none;border-radius:18px;
+  padding:14px;margin:8px auto;font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  width:85%;max-width:340px;cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);transition:all .3s;   }
+.map-link:hover{background:linear-gradient(135deg,#388e3c,#1b5e20);transform:translateY(-4px);}
+/* 🍃 انیمیشن طبیعی برگ‌ها */
+@keyframes leafSwing {
+  0% { transform: rotate(var(--start-rot)) translateX(0); }
+  25% { transform: rotate(calc(var(--start-rot) + 10deg)) translateX(2px); }
+  50% { transform: rotate(var(--start-rot)) translateX(-2px); }
+  75% { transform: rotate(calc(var(--start-rot) - 8deg)) translateX(1px); }
+  100% { transform: rotate(var(--start-rot)) translateX(0); }   }
+.logo-leaf {
+  animation: leafSwing 5s ease-in-out infinite;
+  transform-origin: center center;    }
+/* تنظیم چرخش اولیه هر برگ */
+.logo-leaf:nth-child(1){ --start-rot:-35deg; animation-delay:0.1s; }
+.logo-leaf:nth-child(2){ --start-rot:55deg; animation-delay:0.1s; }
+.logo-leaf:nth-child(3){ --start-rot:25deg; animation-delay:0.1s; }
+@media(max-width:480px){
+  .logo-section{flex-direction:column;text-align:center;}
+  .logo{width:85px;height:85px;}    }
 </style>
 </head>
 <body>
 <div class="business-card">
-  <!-- زمینه فضای سبز -->
   <div class="nature-background"></div>
-  
   <div class="logo-section">
-    <img src="https://1212.jpg" alt="لوگو" class="logo">
+    <span class="logo-leaf"></span><span class="logo-leaf"></span><span class="logo-leaf"></span>
+    <!-- برای تغییر لوگو، آدرس تصویر را در src قرار دهید -->
+    <img src="https://cdn.imgurl.ir/uploads/i22465_AsiaTekno.png" class="logo" alt="آسیا تکنو">
     <div class="logo-text">
-      <h2>فروشگاه آسیا تکنو</h2>
-      <div class="subtitle">با مدیریت امیر شب‌باز (الهائی)</div>
+      <h2>
+        فروشگاه آسیا تکنو
+      </h2>
+      <div class="subtitle">
+        مدیریت امیر شب‌باز (الهائی)
+      </div>
     </div>
   </div>
-  
-  <!-- درخت زیبا -->
-  <div class="tree-container">
-    <div class="tree-trunk"></div>
-    <div class="tree-leaves"></div>
-    <div class="tree-branch"></div>
-    <div class="tree-branch"></div>
-    <div class="tree-branch"></div>
-    <div class="tree-branch"></div>
-    <div class="leaf"></div>
-    <div class="leaf"></div>
-    <div class="leaf"></div>
-    <div class="leaf"></div>
-    <div class="leaf"></div>
-  </div>
-  
+
   <div class="accordion-item">
     <button id="intro-btn" class="accordion-button" onclick="toggleAccordion(0)">
-      <span> درباره ما </span>
-      <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58Z"/></svg>
+      درباره ما
+      <svg viewBox="0 0 24 24"><path d="M12 2 C6 8,10 20,12 22 C14 20,18 8,12 2Z"/></svg>
     </button>
     <div class="accordion-content" id="intro-content">
       <ul>
-        <li> فروشگاه آسیا تکنو </li>
-        <li> خدمات تخصصی سخت افزار- نرم افزار </li>
-        <li> خرید و فروش ( نو و استوک ) </li>
-        <!-- <li>  </li>
-        <li>  </li> -->
+        <li>
+        خدمات تخصصی سخت افزار و نرم افزار
+        </li>
+        <li>
+     خرید و فروش ( نو و استوک )
+        </li>
+        <li>
+    تعمیرات پذیرفته می شود
+        </li>
       </ul>
     </div>
   </div>
   <div class="accordion-item">
     <button id="contact-btn" class="accordion-button" onclick="toggleAccordion(1)">
-      <span>تماس با ما</span>
-      <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58Z"/></svg>
+      تماس با ما
+      <svg viewBox="0 0 24 24"><path d="M12 2 C6 8,10 20,12 22 C14 20,18 8,12 2Z"/></svg>
     </button>
     <div class="accordion-content" id="contact-content">
-      <div class="contact-method f"><a href="#" onclick="makeCall('09397100317')">📞  تماس با مدیریت/ایرانسل</a></div>
-      <div class="contact-method f"><a href="#" onclick="makeCall('+06132223287')">📞 تماس با مدیریت / تلفن مغازه </a></div> 
-      <!-- <div class="contact-method f"><a href="https://t.me/Saeidyr5" target="_blank">💬  ارسال پیام به تـلگرام</a></div> -->
-      <div class="contact-method f"><a href="https://wa.me/989376343517" target="_blank">💬 ارسال پیام به واتساپ</a></div>
-      <!-- <div class="contact-method f"><a href="https://eitaa.com/saeidyr" target="_blank" rel="noopener">💬 ارسال پیام به ایـتـا</a></div> -->
-      <!-- <div class="contact-method f"><a href="http://www.rubika.ir/@saeidyr" target="_blank">💬 ارسال پیام به روبیکـا</a></div> -->
-      <!-- <div class="contact-method f"><a href="https://ble.ir/saeidyrb" target="_blank">💬 ارسال پیام به بـلـه</a></div> -->
-      <div class="contact-method f"><a href="https://https://saeidyr.github.io" target="_blank">🌐 تماس با طراح کارت سبز </a></div>
-<!-- <div class="contact-method f"><a href="https://www.youtube.com/@saeidyout" target="_blank">▶️ مشاهده کانال یوتیوب</a></div> -->
+      <div class="contact-method"><a href="#" onclick="makeCall('+989397100317')"> 📞 ایرانسل  </a></div>
+      <div class="contact-method"><a href="#" onclick="makeCall('06132223287')"> 📞 تلفن مغازه  </a></div>
+      <div class="contact-method"><a href="https://wa.me/989376343517" target="_blank"> 💬 واتساپ  </a></div>
+      <!-- <div class="contact-method"><a href="https://t.me/Saeidyr5" target="_blank"> 💬 تلگرام </a></div> -->
+      <div class="contact-method"><a href="https://saeidyr.github.io" target="_blank"> 🌐 معرفی سازنده کارت </a></div>
     </div>
   </div>
   <div class="accordion-item">
     <button id="skills-btn" class="accordion-button" onclick="toggleAccordion(2)">
-      <span>کارت‌های بانکی</span>
-      <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58Z"/></svg>
+      کارت‌های بانکی
+      <svg viewBox="0 0 24 24"><path d="M12 2 C6 8,10 20,12 22 C14 20,18 8,12 2Z"/></svg>
     </button>
     <div class="accordion-content" id="skills-content">
-      <div class="contact-method">
-        <a>🔹 بلو بانک </a>
-        <a href="#" onclick="shareNumber('1214'); return false;">1214</a>
-      </div>
-      <!-- <div class="contact-method">
-        <a>🔹 بانک رفاه </a>
-        <a href="#" onclick="shareNumber('5894631191418805'); return false;">5894631191418805</a>
-      </div>
-      <div class="contact-method">
-        <a> 🔹 کشاورزی  </a>
-        <a href="#" onclick="shareNumber('6037701654932315'); return false;">6037701654932315</a>
-      </div>
-      <div class="contact-method">
-        <a>🔹 رسالت  </a>
-        <a href="#" onclick="shareNumber('5041721008790405'); return false;">5041721008790405</a>
-      </div>
-    </div> -->
+      <div class="contact-method"><a> 🔹 بلو بانک </a><a href="#" onclick="shareNumber(51214);">51214</a></div>
   </div>
   <div class="accordion-item">
     <button id="address-btn" class="accordion-button" onclick="toggleAccordion(3)">
-      <span>آدرس‌ها</span>
-      <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58Z"/></svg>
+      آدرس‌ ما
+      <svg viewBox="0 0 24 24"><path d="M12 2 C6 8,10 20,12 22 C14 20,18 8,12 2Z"/></svg>
     </button>
     <div class="accordion-content" id="address-content">
       <div id="locations-list"></div>
     </div>
   </div>
 </div>
+
 <script>
-function toggleAccordion(index){
-  const btns = document.querySelectorAll('.accordion-button');
-  const conts = document.querySelectorAll('.accordion-content');
-  const targetBtn = btns[index];
-  const targetContent = conts[index];
-  const isOpen = targetContent.classList.contains('active');
-
-  btns.forEach(btn => btn.classList.remove('active'));
-  conts.forEach(cont => cont.classList.remove('active'));
-
-  if(!isOpen){
-    targetBtn.classList.add('active');
-    targetContent.classList.add('active');
-  }
+function toggleAccordion(i){
+  const btn=document.querySelectorAll('.accordion-button')[i];
+  const content=document.querySelectorAll('.accordion-content')[i];
+  const active=content.classList.contains('active');
+  document.querySelectorAll('.accordion-button').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.accordion-content').forEach(c=>c.classList.remove('active'));
+  if(!active){btn.classList.add('active');content.classList.add('active');}
 }
-
-function copyNumber(num){
-  navigator.clipboard.writeText(num).then(() => {
-    const t = document.getElementById('toast');
-    if(t) {
-      t.textContent = '✅ شماره کارت کپی شد';
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 2000);
-    }
-  });
-}
-
-function shareNumber(num){
-  const text = num;
-  if(navigator.share){
-    navigator.share({text: text});
-  } else {
-    window.open('https://wa.me/?text=' + encodeURIComponent(text), '_blank');
-  }
-}
-
-function makeCall(n){
-  if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){
-    window.location.href = "tel:" + n;
-  } else {
-    navigator.clipboard.writeText(n).then(() => alert("شماره کپی شد!"));
-  }
-}
-
-const locations = [
-  {
-    label: 'دفتر اصلی: سیمتری تقاطع طالقانی بازار بزرگ کامپیوتر طبقه اول انتهای مرداد آسیاتکنو',
-    lat: 31.6595325276542,
-    lng: 48.68646299999999
-  },
-  // {
-  //   label: 'محل کار: خ امام حسن عسکری ع دبیرستان شهید حسن الهائی',
-  //   lat: 31.3206086,
-  //   lng: 48.597076111153655
-  // },
-  // {
-  //   label: 'آدرس سوم در صورت نیاز',
-  //   lat: 31.279271,
-  //   lng: 49.603414
-  // }
+function makeCall(n){if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){location.href="tel:"+n;}else{navigator.clipboard.writeText(n).then(()=>alert("شماره کپی شد!"));}}
+function shareNumber(n){if(navigator.share){navigator.share({text:n});}else{window.open('https://wa.me/?text='+n,'_blank');}}
+const locations=[
+ {label: 'سیمتری تقاطع طالقانی بازار بزرگ کامپیوتر طبقه اول انتهای مرداد آسیاتکنو ',
+ lat:31.3206086,
+ lng:48.68646299999999 
+},
+//  {label:' محل کار: امام حسن عسکری، دبیرستان شهید الهائی ',
+//  lat: 31.3206086,
+//  lng: 48.68646299999999
+// }
 ];
-
-document.addEventListener("DOMContentLoaded", () => {
-  const list = document.getElementById("locations-list");
-  locations.forEach((loc, i) => {
-    const btn = document.createElement("button");
-    btn.className = "map-link";
-    btn.textContent = loc.label;
-    btn.onclick = () => openNavigator(i);
-    list.appendChild(btn);
-  });
+document.addEventListener("DOMContentLoaded",()=>{
+ const list=document.getElementById("locations-list");
+ locations.forEach((loc,i)=>{
+   const b=document.createElement("button");
+   b.className="map-link";b.textContent=loc.label;
+   b.onclick=()=>openNavigator(i);list.appendChild(b);
+ });
 });
-
-function openNavigator(index) {
-  const loc = locations[index];
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const mobile = /android|iphone|ipad|ipod/i.test(userAgent);
-  if (mobile) {
-    if (/android/i.test(userAgent)) {
-      const geoUri = `geo:${loc.lat},${loc.lng}?q=${encodeURIComponent(loc.label)}`;
-      window.location.href = geoUri;
-    } else {
-      const appleUri = `maps://maps.apple.com/?ll=${loc.lat},${loc.lng}&q=${encodeURIComponent(loc.label)}`;
-      window.location.href = appleUri;
-    }
-  } else {
-    const googleUrl = `https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`;
-    window.open(googleUrl, '_blank');
-  }
+function openNavigator(i){
+ const loc=locations[i];const ua=navigator.userAgent;
+ if(/android/i.test(ua)){location.href=`geo:${loc.lat},${loc.lng}?q=${encodeURIComponent(loc.label)}`;}
+ else if(/iphone|ipad/i.test(ua)){location.href=`maps://maps.apple.com/?ll=${loc.lat},${loc.lng}&q=${encodeURIComponent(loc.label)}`;}
+ else{window.open(`https://www.google.com/maps/search/?api=1&query=${loc.lat},${loc.lng}`,'_blank');}
 }
 </script>
 </body>
 </html>
+
