@@ -229,10 +229,11 @@ body {
   </div>
   <div class="accordion-item">
     <button id="address-btn" class="accordion-button" onclick="toggleAccordion(3)">
-      آدرس‌ ما
+        🗺️ آدرس‌ و مسیریابی 📍
      <span class="logo-leaf"> 🌿 </span>
     </button>
     <div class="accordion-content" id="address-content">
+        <div class="contact-method"><a> 👇 برای مسیریابی کلیک کنید  </a>
       <div id="locations-list"></div>
     </div>
   </div>
@@ -249,7 +250,7 @@ function toggleAccordion(i){
 function makeCall(n){if(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)){location.href="tel:"+n;}else{navigator.clipboard.writeText(n).then(()=>alert("شماره کپی شد!"));}}
 function shareNumber(n){if(navigator.share){navigator.share({text:n});}else{window.open('https://wa.me/?text='+n,'_blank');}}
 const locations=[
- {label:' شهر الهائی ، جاده اصلی، جنب بانک کشاورزی ',
+ {label:' شهر الهائی ، جاده اصلی، جنب بانک کشاورزی📌 ',
  lat:31.65117723005354,
  lng:48.59616938978436
 },
